@@ -39,7 +39,7 @@ PostgreSQL, MySQL, SQL Server
 
 Supported Cloud Providers
 
-AWS S3, Azure Blob Storage, Google Cloud Storage```
+AWS S3, Azure Blob Storage, Google Cloud Storage
 
 
 This project is licensed under the Apache License 2.0. See the LICENSE
