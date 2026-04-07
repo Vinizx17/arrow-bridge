@@ -8,18 +8,13 @@ Arrow Modules (`arrow_modules`) provides **pipeline accelerators** for working w
 - **Database extractors**: Extract tables in chunks into PyArrow Tables
 - **Cloud storage connectors**: AWS S3 (boto3), Azure Blob Storage, GCS
 - **Cloud storage extractors**: Extract files (CSV, Parquet, ORC, JSON, XML, TXT) into PyArrow Tables
-<<<<<<< HEAD
 - **PyArrow Table writer**: Write PyArrow Tables to local or cloud storage in multiple formats (Parquet, Feather, CSV, JSON, ORC)
-=======
-- **PyArrow Table writer**: Write PyArrow Tables to local or cloud storage in multiple formats (Parquet, Feather, CSV, JSON, Avro, ORC)
->>>>>>> 58afadff94c41e6ebf99b98d8bbae5d6b9ba6626
 
 ## Installation
 
 ```bash
-pip install arrow_modules```
-
-## Python example
+pip install arrow_modules
+```
 
 ```python
 """
@@ -74,7 +69,6 @@ write_arrow_table(
     container_or_bucket="my-bucket"
 )
 
-<<<<<<< HEAD
 # ---------------------------
 # Scenario 2: SQL Server → ORC → Azure Blob
 # ---------------------------
