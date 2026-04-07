@@ -3,8 +3,8 @@ requires = ["setuptools>=65.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "arrow_modules"
-version = "0.1.0"
+name = "arrow-bridge"
+version = "0.2.0"
 description = "Arrow-based pipeline accelerators for databases and cloud storage"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -19,22 +19,24 @@ classifiers = [
     "Operating System :: OS Independent"
 ]
 
-# Core dependencies
 dependencies = [
-    "boto3==1.42.57",
     "azure-storage-blob==12.28.0",
+    "boto3==1.42.57",
     "google-cloud-storage==3.9.0",
     "pyarrow==23.0.1",
     "pandas==3.0.1",
     "SQLAlchemy==2.0.47",
-    "PyMySQL==1.1.2"
+    "PyMySQL==1.1.2",
+    "psycopg2==2.9.11",
+    "requests==2.32.5"
 ]
 
 [project.urls]
-Homepage = "https://github.com/Viniz3/arrow_modules"
-BugTracker = "https://github.com/Viniz3/arrow_modules/issues"
-Documentation = "https://github.com/Viniz3/arrow_modules#readme"
+Homepage = "https://github.com/Vinizx17/arrow-bridge"
+BugTracker = "https://github.com/Vinizx17/arrow-bridge/issues"
+Documentation = "https://github.com/Vinizx17/arrow-bridge#readme"
 
 [tool.setuptools.packages.find]
-where = ["arrow_modules"]
+where = ["."]
+include = ["arrow_bridge*"]
 exclude = ["tests*"]
