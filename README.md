@@ -1,6 +1,6 @@
-# Arrow Modules
+# Arrow Bridge
 
-Arrow Modules (`arrow_modules`) provides **pipeline accelerators** for working with databases and cloud storage using **PyArrow**. It helps you **extract, transform, and load data** efficiently from relational databases and cloud storage (AWS S3, Azure Blob, GCS) into **PyArrow Tables** and multiple file formats.
+Arrow Bridge (`arrow_bridge`) provides **pipeline accelerators** for working with databases and cloud storage using **PyArrow**. It helps you **extract, transform, and load data** efficiently from relational databases and cloud storage (AWS S3, Azure Blob, GCS) into **PyArrow Tables** and multiple file formats.
 
 ## Features
 
@@ -13,12 +13,12 @@ Arrow Modules (`arrow_modules`) provides **pipeline accelerators** for working w
 ## Installation
 
 ```bash
-pip install arrow_modules
+pip install arrow-bridge
 ```
 
 ```python
 """
-Example main pipeline using arrow_modules abstractions.
+Example main pipeline using arrow-bridge abstractions.
 
 Scenarios:
 1. Extract from PostgreSQL → Parquet → AWS S3
@@ -26,11 +26,11 @@ Scenarios:
 3. Extract from S3 → Avro → S3
 """
 
-from arrow_modules.databases.connector import connect_postgres, connect_sqlserver
-from arrow_modules.databases.extractor import extract_table_to_arrow
-from arrow_modules.storage.connector import connect_s3, connect_azure_blob
-from arrow_modules.storage.extractor import extract_s3_file_to_arrow
-from arrow_modules.arrow_writer import write_arrow_table
+from arrow_bridge.databases.connector import connect_postgres, connect_sqlserver
+from arrow_bridge.databases.extractor import extract_table_to_arrow
+from arrow_bridge.storage.connector import connect_s3, connect_azure_blob
+from arrow_bridge.storage.extractor import extract_s3_file_to_arrow
+from arrow_bridge.arrow_writer import write_arrow_table
 
 # ---------------------------
 # Scenario 1: Postgres → Parquet → S3
@@ -91,7 +91,12 @@ arrow_table_sqlsrv = extract_table_to_arrow(
 
 # Connect to Azure Blob
 azure_client = connect_azure_blob(
-    connection_string="DefaultEndpointsProtocol=https;AccountName=...;AccountKey=...;EndpointSuffix=core.windows.net"
+    connection_string=(
+        "DefaultEndpointsProtocol=https;"
+        "AccountName=...;"
+        "AccountKey=...;"
+        "EndpointSuffix=core.windows.net"
+    )
 )
 
 # Write to Azure Blob in ORC
