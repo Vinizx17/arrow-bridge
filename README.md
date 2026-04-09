@@ -23,7 +23,6 @@ Example main pipeline using arrow-bridge abstractions.
 Scenarios:
 1. Extract from PostgreSQL → Parquet → AWS S3
 2. Extract from SQL Server → ORC → Azure Blob
-3. Extract from S3 → Avro → S3
 """
 
 from arrow_bridge.databases.connector import connect_postgres, connect_sqlserver
